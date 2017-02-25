@@ -37,3 +37,16 @@ public class Solution {
         return s.length() - lastIndex;   
     }
 }
+
+//Basic implemention without trim and lastIndexOf, 5ms
+public class Solution {
+    public int lengthOfLastWord(String s) {
+        int lenIndex = s.length()-1;
+        int len = 0;
+        for (int i=lenIndex; i>=0 && s.charAt(i)==' '; i--) 
+            lenIndex--;
+        for (int i=lenIndex; i>=0 && s.charAt(i)!=' '; i--) 
+            len++;
+        return len;
+    }
+}
